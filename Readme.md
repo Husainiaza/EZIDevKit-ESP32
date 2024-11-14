@@ -95,9 +95,11 @@ Serial.println(dataAnalog);
 
 client.publish("topicAnda/ldr", String(dataLDR));  
 ```
-## Kawalan Relay
+
+# - Letak kod ini dalam fungsi - void messageReceived()
+## Kawalan Buzzer ( Subscribe )
 ```
- if(String(topic) == "socketLA01/buzzer") 
+ if(String(topic) == "topicAnda/buzzer") 
   {
       if(payload =="on")
       {
@@ -114,9 +116,11 @@ client.publish("topicAnda/ldr", String(dataLDR));
         
       }
   } 
+```
+## Kawalan Relay  ( Subscribe )
+```
 
-
-  if(String(topic) == "socketLA01/socket1") 
+  if(String(topic) == "topicAnda/socket1") 
   {
       if(payload =="on")
       {
@@ -133,7 +137,7 @@ client.publish("topicAnda/ldr", String(dataLDR));
       }
   }
 
-   if(String(topic) == "socketLA01/socket2") 
+   if(String(topic) == "topicAnda/socket2") 
   {
       if(payload =="on")
       {
