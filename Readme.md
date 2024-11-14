@@ -95,8 +95,8 @@ Serial.println(dataAnalog);
 
 client.publish("topicAnda/ldr", String(dataLDR));  
 ```
-
-# - Letak kod ini dalam fungsi - void messageReceived()
+# Kawalan MQTT (subscribe)
+## Letak kod ini dalam fungsi - void messageReceived()
 ## Kawalan Buzzer ( Subscribe )
 ```
  if(String(topic) == "topicAnda/buzzer") 
