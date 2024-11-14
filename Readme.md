@@ -6,6 +6,7 @@ MQTT by Joel Gaehwiler
 ## SENSOR DS18B20 - Baca suhu
 
 ## Section 3 : void loop dengan if condition
+```
 
 DS18B20.requestTemperatures();       // arahan baca suhu
 dataSuhuC = DS18B20.getTempCByIndex(0);  // nilai suhu disimpan dalam pembolehubah tempC
