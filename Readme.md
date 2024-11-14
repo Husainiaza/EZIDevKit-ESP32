@@ -70,26 +70,30 @@ dht.begin();
 ```
 ## Section 3 : void loop
 ```
- float humid = dht.readHumidity();
-  float temp = dht.readTemperature();
+float humid = dht.readHumidity();
+float temp = dht.readTemperature();
 
-  Serial.print("Humidity: ");
-  Serial.println(humid);
-  Serial.print("Temperature: ");
-  Serial.print(temp);
-  Serial.println("°C ");
+Serial.print("Humidity: ");
+Serial.println(humid);
+Serial.print("Temperature: ");
+Serial.print(temp);
+Serial.println("°C ");
 
- client.publish("kluangman/temp", String(temp));  
- client.publish("kluangman/humid", String(humid));  
+client.publish("topicAnda/temp", String(temp));  
+client.publish("topicAnda/humid", String(humid));  
+
 ```
 
-## ANALOG sensor
-```
-  dataAnalog = analogRead(sensorLDR);
-  Serial.print("Cahaya: ");
-  Serial.println(dataAnalog);  
+# ANALOG SENSOR INPUT
 
-  client.publish("socketLA01/ldr", String(dataLDR));  
+## Section 3 : void loop - baca semua jenis analog sensor
+### Contoh analog sensor LDR
+```
+dataAnalog = analogRead(sensorLDR);
+Serial.print("Cahaya: ");
+Serial.println(dataAnalog);  
+
+client.publish("topicAnda/ldr", String(dataLDR));  
 ```
 ## Kawalan Relay
 ```
