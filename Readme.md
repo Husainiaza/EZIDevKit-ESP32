@@ -51,7 +51,7 @@ DS18B20.requestTemperatures();       // arahan baca suhu
 ```
 ## Baca suhu DHT22 (AM2301)
 
-## header
+## Section 1: Header
 ```
 #include "DHT.h"
 ```
@@ -62,11 +62,11 @@ DS18B20.requestTemperatures();       // arahan baca suhu
 
 DHT dht(DHTPIN, DHTTYPE);
 ```
-## void setup
+## Section 2 : void setup
 ```
 dht.begin();
 ```
-## void loop
+## Section 3 : void loop
 ```
  float humid = dht.readHumidity();
   float temp = dht.readTemperature();
