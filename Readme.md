@@ -52,7 +52,7 @@ if (dataSuhuC < 25) {
 ```
 
 
-# Baca suhu DHT22 (AM2301)
+# SENSOR DHT22 (AM2301) - baca suhu dan humiditi
 ## Section 1: Header
 ```
 #include "DHT.h"
