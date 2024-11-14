@@ -1,19 +1,21 @@
 # **IoT MQTT**
 
-## MQTT Library
+## install MQTT Library
 MQTT by Joel Gaehwiler
 
-## Baca suhu
+## SENSOR DS18B20 - Baca suhu
+
+## Section 3 : void loop dengan if condition
 
 DS18B20.requestTemperatures();       // arahan baca suhu
-  dataSuhuC = DS18B20.getTempCByIndex(0);  // nilai suhu disimpan dalam pembolehubah tempC
+dataSuhuC = DS18B20.getTempCByIndex(0);  // nilai suhu disimpan dalam pembolehubah tempC
  
-  Serial.print("Temperature: ");
-  Serial.print(dataSuhuC);    
-  Serial.println("°C");
-  client.publish("socketLA01/suhu", String(dataSuhuC));
+Serial.print("Temperature: ");
+Serial.print(dataSuhuC);    
+Serial.println("°C");
+client.publish("topicAnda/suhu", String(dataSuhuC));
 
-  if (dataSuhuC < 25) {
+if (dataSuhuC < 25) {
     Serial.println(" suhu paras sejuk ");    
   }
   else if (dataSuhuC > 25 && dataSuhuC < 33 ) {
