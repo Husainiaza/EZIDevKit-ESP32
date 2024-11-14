@@ -3,7 +3,7 @@
 ## install MQTT Library
 MQTT by Joel Gaehwiler
 
-## SENSOR DS18B20 - Baca suhu
+# SENSOR DS18B20 - Baca suhu
 
 ## Section 3 : void loop dengan if condition
 ```
@@ -51,9 +51,8 @@ if (dataSuhuC < 25) {
   }
 ```
 
-```
-## Baca suhu DHT22 (AM2301)
 
+# Baca suhu DHT22 (AM2301)
 ## Section 1: Header
 ```
 #include "DHT.h"
