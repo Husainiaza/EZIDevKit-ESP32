@@ -46,9 +46,7 @@ const char pass[] = SSIDpwd;
 //------ ISTIHAR Pemboleh ubah dengan jenis Data yang digunakan---
 unsigned long lastMillis = 0;
 float dataSuhuC; // suhu dalam Celsius
-int dataLDR;
-float BPM, SpO2;
-char statusSuhu[20];
+
 
 //-----d. - Cipta Objek dari Librari berkaitan------------------ ----
 //--------------------------------------------------------------------------
@@ -89,6 +87,18 @@ void setup() {
   sensors.begin();    // initialize the DS18B20 sensor
 
   connect();
+
+  display.clearDisplay();
+  display.setTextSize(1);
+  display.setTextColor(WHITE);
+  display.setCursor(0,0);
+  display.println("---  ESI-DEVKIT  ---");
+  display.setCursor(0,10);
+  display.println("K. Komuniti Sbg Jaya");
+  display.setCursor(10,20);
+  display.println("--------------------");
+  display.display();
+  delay(5000);
 }
 //##################  Seksyen 2 - TAMAT #############################
 
