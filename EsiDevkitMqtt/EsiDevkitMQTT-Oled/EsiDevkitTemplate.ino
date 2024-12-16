@@ -10,10 +10,11 @@
 #include <MQTT.h>
 #include <Wire.h>
 #include <SPI.h>
-#include <OneWire.h>
-#include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
 #include <DallasTemperature.h>
+#include <OneWire.h>
+#include <Adafruit_GFX.h>
+
 
 //--------------------------------------------------------------------------
 //-----b. - ISTIHAR Sambungan nama Pin dengan Nombor Fizikal PIN ----
