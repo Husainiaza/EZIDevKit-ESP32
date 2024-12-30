@@ -10,9 +10,10 @@
 #include <MQTT.h>
 #include <Wire.h>
 #include <SPI.h>
-#include <Adafruit_SSD1306.h>
+#include <LiquidCrystal_I2C.h>
 #include <DallasTemperature.h>
 #include <OneWire.h>
+#include <Adafruit_SSD1306.h>
 #include <Adafruit_GFX.h>
 
 
@@ -23,7 +24,7 @@
 //---Actuator and Relay  pin connection---
 #define relay01     27 
 #define relay02     26
-#define buzzer      25
+#define buzzer      2
 #define SensorSuhu  15 // pin sambungan ke DS18B20 (ONEWIRE)
 #define sensorSoil   34
 
@@ -36,8 +37,12 @@
 // ------ Sila edit nama atau ID ikut keperluan --------
 #define Client_Id   "andy64758765756474756688"
 #define NamaBroker  "broker.hivemq.com"
-#define namaSSID    "IoT";
-#define SSIDpwd     "iot@kksj2023";
+#define namaSSID    "WIFIDELIMA";
+#define SSIDpwd     "0987654321";
+//#define namaSSID    "HaMa iPhone 13";
+//#define SSIDpwd     "1234556790";
+//#define namaSSID    "IoT";
+//#define SSIDpwd     "iot@kksj2023";
 // ~~~~~~~~~~~~~~~~~~~  TAMMAT   ~~~~~~~~~~~~~~~~~~~~~~~
 
 //-----c.  - ISTIHAR  constant dan pembolehubah------------------------------
@@ -62,6 +67,9 @@ Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
 // Istihar objek bagi Module Sersor Suhu Dallas 18B20
 OneWire oneWire(SensorSuhu);
 DallasTemperature sensors(&oneWire);
+
+LiquidCrystal_I2C lcd(0x27,20,4);  // set the LCD address to 0x27 for a 16 chars and 2 line display
+
 
 //##################  Seksyen 1 - TAMAT #############################
 
@@ -90,6 +98,7 @@ void setup() {
 
   connect();
 
+/*
   display.clearDisplay();
   display.setTextSize(1);
   display.setTextColor(WHITE);
@@ -100,7 +109,16 @@ void setup() {
   display.setCursor(10,20);
   display.println("--------------------");
   display.display();
-  delay(5000);
+  delay(5000); */
+
+  lcd.init();                      // initialize the lcd 
+  lcd.init();
+  lcd.backlight();
+  lcd.setCursor(0,0);
+  lcd.print(" Irrigation  Systen ");
+  lcd.setCursor(0,1);
+  lcd.print("Andy UiTM P. Pinang ");
+  
 }
 //##################  Seksyen 2 - TAMAT #############################
 
@@ -126,12 +144,22 @@ void loop() {
     Serial.print(dataSuhuC);
     Serial.println(" ºC");
     client.publish("andy/suhu", String(dataSuhuC));
+
+    lcd.setCursor(0,2);
+    lcd.print("Bacaan Suhu :");
+    lcd.setCursor(14,2);
+    lcd.print(dataSuhuC);
     //----------------------------------------------------------------------------
   
     //------SENSOR seterusnya-------------------------------------------------------------
     int soilData = analogRead(sensorSoil);
     Serial.print(soilData);
     client.publish("andy/soil", String(soilData));
+
+    lcd.setCursor(0,3);
+    lcd.print("Bacaan Soil :");
+    lcd.setCursor(14,3);
+    lcd.print(soilData);
 
     if(soilData > 1000) {
       Serial.print(" Tanah Lembab ");
@@ -153,7 +181,7 @@ void loop() {
 
     //----------------------------------------------------------------------------
   
-  }
+  
 }
 
 //##################  Seksyen 3 - TAMAT #############################
