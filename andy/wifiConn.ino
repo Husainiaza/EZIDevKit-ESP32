@@ -49,14 +49,14 @@ void messageReceived(String &topic, String &payload) {
       if(payload =="on")
       {
       Serial.println(payload);
-      digitalWrite(relay01,HIGH);
+      digitalWrite(relay02,HIGH);
       Serial.println("PAM ON");
       }
       
       else if(payload =="off")
       {
         Serial.println(payload);
-        digitalWrite(relay01,LOW);
+        digitalWrite(relay02,LOW);
         Serial.println("PAM OFF");
         
       }
