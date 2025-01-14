@@ -1,7 +1,16 @@
-# **IoT MQTT**
+# **Library**
 
 ## install MQTT Library
 MQTT by Joel Gaehwiler
+
+## install DS18B20 Library
+DallasTemperature by Miles Burton
+pastikan install ALL
+
+## install SSD1306 OLED Library
+Adafruit SSD1306 by adafruit
+pastikan install ALL
+
 
 # SENSOR DS18B20 - Baca suhu
 
