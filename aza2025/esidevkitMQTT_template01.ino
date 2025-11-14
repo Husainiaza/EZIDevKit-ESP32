@@ -78,12 +78,16 @@ void messageReceived(String &topic, String &payload) {
   
   //==============================================================
 
-  //==========================Relay Control ========================
-    
+  //==========================Kawalan 1 (subcribe)========================
+      /*----Tulis Kod Kawalan ( subsribe here ) ------- */
   
-  //   ----Tulis Kod Kawalan ( subsribe here ) -------
-
-  //--------------------------- Relay Control --------------------
+  //==========================Kawalan 2 (subcribe)========================
+   /*----Tulis Kod Kawalan ( subsribe here ) ------- */
+  
+  //==========================Kawalan 3 (subcribe) ========================
+     /*----Tulis Kod Kawalan ( subsribe here ) ------- */
+  
+  //--------------------------- Kawalan Tamat --------------------
 }
 
 //###################################################
